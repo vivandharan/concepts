@@ -10,383 +10,155 @@
 <meta property="og:description" content="Lookbook, services & consultation booking — a concept by Vivan">
 <meta property="og:image" content="https://images.unsplash.com/photo-1618901185975-d59f7091bcfe?w=1200&h=630&fit=crop&q=70">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#6B1E2E">
+<meta name="theme-color" content="#F8F7F4">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          ivory: '#FBF7F2',
-          sand: '#F3ECE3',
-          maroon: '#6B1E2E',
-          gold: '#B8935A',
-          goldink: '#8A6A3A',
-          charcoal: '#2A2426',
-          muted: '#6E6266',
-        },
-        fontFamily: {
-          display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
-          sans: ['Jost', 'system-ui', 'sans-serif'],
-        },
-      },
-    },
-  };
-</script>
-<style>
-  html { scroll-behavior: smooth; scroll-padding-top: 2.5rem; }
-  body { -webkit-tap-highlight-color: transparent; }
-  .rule { height: 1px; background: linear-gradient(90deg, transparent, #B8935A, transparent); }
-  .eyebrow { font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: #8A6A3A; font-weight: 500; }
-  .field { width: 100%; min-height: 48px; border: 0; border-bottom: 1.5px solid #D8CBBB; background: transparent; padding: .65rem .1rem; font-size: 16px; color: #2A2426; border-radius: 0; }
-  .field:focus { outline: none; border-color: #6B1E2E; }
-  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236B1E2E' stroke-width='1.5'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .25rem center; padding-right: 1.5rem; }
-  .field[aria-invalid="true"] { border-color: #A3122F; }
-  .err { color: #A3122F; font-size: .8rem; margin-top: .25rem; min-height: 1rem; }
-  .chip input:checked + label { background: #6B1E2E; color: #FBF7F2; border-color: #6B1E2E; }
-  .chip input:focus-visible + label { outline: 2px solid #B8935A; outline-offset: 2px; }
-  .look { break-inside: avoid; }
-  .look figcaption { opacity: 0; transform: translateY(8px); transition: .3s; }
-  .look.open figcaption, .look:hover figcaption { opacity: 1; transform: none; }
-  .no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { scrollbar-width: none; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
-<body class="bg-ivory text-charcoal font-sans antialiased pb-24 md:pb-0">
+<body data-barba="wrapper">
 
-<!-- Honesty ribbon -->
-<div class="fixed top-0 inset-x-0 z-50 bg-charcoal text-ivory text-[11px] leading-tight text-center py-1.5 px-3">
-  Concept demo by Vivan · <a href="https://v1therun.com" class="underline">v1therun.com</a> — not the official Saanvi site
-</div>
+<div class="tape" aria-hidden="true"><div class="tape-roll"></div><div class="tape-nums"></div><div class="tape-mark"></div></div>
 
-<!-- 1. Hero -->
-<header class="relative min-h-[94svh] flex items-end text-ivory">
-  <img src="https://images.unsplash.com/photo-1618901185975-d59f7091bcfe?w=1200&q=70&auto=format" alt="Woman in a red silk saree seated against carved heritage stone" class="absolute inset-0 w-full h-full object-cover object-[60%_center]" fetchpriority="high">
-  <div class="absolute inset-0 bg-gradient-to-t from-[#1d0c11]/90 via-[#1d0c11]/40 to-[#1d0c11]/25"></div>
-  <div class="relative w-full max-w-5xl mx-auto px-6 pb-12 md:pb-24">
-    <p class="font-display text-[4.2rem] leading-[.9] md:text-8xl tracking-tight">Saanvi</p>
-    <p class="mt-1 text-[.78rem] tracking-[.32em] uppercase text-[#E9D6B6]">by Supriya Manjunath</p>
-    <div class="w-16 h-px bg-gold my-6"></div>
-    <h1 class="font-display italic text-[1.9rem] leading-tight md:text-5xl max-w-xl">Custom designer wear, stitched to fit you perfectly.</h1>
-    <p class="mt-3 text-sm text-ivory/85 max-w-md">Lehengas · Blouses · Custom dresses · Dress materials — Saraswathipuram, Mysuru.</p>
-    <a href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener" class="mt-5 inline-flex items-center gap-1.5 border border-ivory/40 rounded-full px-3.5 py-1.5 text-sm min-h-[36px] backdrop-blur bg-white/10">
-      <span class="text-[#E9C98F]" aria-hidden="true">★</span> 4.7 · 300+ Google reviews
-    </a>
-    <div class="mt-7 flex flex-col sm:flex-row gap-3">
-      <a href="#book" class="inline-flex justify-center items-center min-h-[52px] px-7 bg-ivory text-maroon font-semibold tracking-wide">Book a consultation</a>
-      <a href="#lookbook" class="inline-flex justify-center items-center min-h-[52px] px-7 border border-ivory/80 tracking-wide">View lookbook</a>
-    </div>
-  </div>
+<div class="ribbon">Concept demo by Vivan · <a href="https://v1therun.com" data-no-barba>v1therun.com</a> — not the official Saanvi site</div>
+
+<header class="topbar">
+  <a class="brand" href="index.html">Saanvi</a>
+  <nav aria-label="Pages">
+    <a href="lookbook.html" data-ns="lookbook">Lookbook</a>
+    <a href="book.html" data-ns="book">Book</a>
+    <a href="index.html#visit" data-ns="visit">Visit</a>
+  </nav>
 </header>
 
-<main>
-<!-- 2. Meet Supriya -->
-<section class="py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6 grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
-    <div class="relative aspect-[4/5] max-w-xs w-full mx-auto md:mx-0 bg-sand border border-gold/50 flex flex-col items-center justify-center text-center p-6">
-      <svg aria-hidden="true" width="88" height="88" viewBox="0 0 88 88" fill="none" stroke="#B8935A" stroke-width="1.2"><circle cx="44" cy="30" r="14"/><path d="M16 84c2-20 14-32 28-32s26 12 28 32"/><path d="M60 14l14-10M74 4c3 6-2 14-10 16" stroke-dasharray="2 3"/></svg>
-      <p class="mt-4 eyebrow">Portrait</p>
-      <p class="mt-1 text-sm text-muted">Supriya's photo goes here — shot at the studio</p>
+<main data-barba="container" data-barba-namespace="home">
+
+  <section class="hero">
+    <p class="wordmark" aria-hidden="true">Saanvi</p>
+    <p class="byline">by Supriya Manjunath</p>
+    <figure class="hero-img">
+      <img src="https://images.unsplash.com/photo-1618901185975-d59f7091bcfe?w=1400&q=70&auto=format" alt="Woman in a red silk saree seated on carved heritage stone steps" fetchpriority="high">
+    </figure>
+    <div class="hero-copy">
+      <h1 tabindex="-1">Custom designer wear, stitched to fit you perfectly.</h1>
+      <p>Lehengas, blouses, custom dresses and dress materials, made in Saraswathipuram, Mysuru.</p>
+      <a class="rating" href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener">★ 4.7 from 300+ Google reviews</a>
+      <div class="actions">
+        <a class="btn btn-solid" href="book.html">Book a consultation</a>
+        <a class="btn" href="lookbook.html">View lookbook</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap meet">
+    <div class="portrait">
+      <svg viewBox="0 0 100 140" fill="none" stroke="#B5172F" stroke-width="1" stroke-dasharray="3 3" aria-hidden="true"><circle cx="50" cy="34" r="17"/><path d="M14 140c2-34 16-56 36-56s34 22 36 56"/></svg>
+      <p>Supriya's portrait, shot at the studio</p>
     </div>
     <div>
-      <p class="eyebrow">Meet the designer</p>
-      <h2 class="font-display text-4xl md:text-5xl mt-3 text-maroon">Hello, I'm Supriya.</h2>
-      <div class="rule my-6 max-w-[10rem]"></div>
-      <p class="text-lg leading-relaxed">Every outfit at Saanvi starts with a conversation — about you, the occasion, and how you want to feel when you wear it. From there we sketch, measure, fit and refine until it's unmistakably yours.</p>
-      <p class="mt-5 text-sm text-muted italic">[Supriya's story goes here — we'll write it together]</p>
+      <h2 class="d">Every outfit starts with a conversation</h2>
+      <p class="story">You tell Supriya about the occasion, how you want to feel, and the pictures you've saved. Then it's sketched, measured, fitted and refined until it's unmistakably yours.</p>
+      <p class="placeholder">[Supriya's story goes here. We'll write it together.]</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 3. Services -->
-<section class="bg-sand py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="eyebrow text-center">What we create</p>
-    <h2 class="font-display text-4xl md:text-5xl mt-3 text-center text-maroon">Made for you, by hand</h2>
-    <div class="rule my-8 max-w-xs mx-auto"></div>
-    <div class="grid gap-4 sm:grid-cols-2">
-      <article class="bg-ivory p-6 border border-gold/30">
-        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#6B1E2E" stroke-width="1.2"><path d="M12 4h12l-2 8 8 20H6l8-20z"/><path d="M14 12h8"/></svg>
-        <h3 class="font-display text-2xl mt-3">Lehenga stitching</h3>
-        <p class="text-muted mt-1">Bridal and festive lehengas with a perfect fit.</p>
-        <a data-wa="Hi Saanvi! I'm interested in Lehenga stitching." href="#" target="_blank" rel="noopener" class="mt-4 inline-flex items-center min-h-[44px] text-maroon font-semibold border-b border-maroon/40">Enquire →</a>
-      </article>
-      <article class="bg-ivory p-6 border border-gold/30">
-        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#6B1E2E" stroke-width="1.2"><path d="M8 8l6-4h8l6 4-2 10H10z"/><path d="M14 4c1 4 7 4 8 0"/><path d="M10 18v4M26 18v4"/></svg>
-        <h3 class="font-display text-2xl mt-3">Blouse & custom stitching</h3>
-        <p class="text-muted mt-1">Your design, your measurements, our craft.</p>
-        <a data-wa="Hi Saanvi! I'm interested in Blouse & custom stitching." href="#" target="_blank" rel="noopener" class="mt-4 inline-flex items-center min-h-[44px] text-maroon font-semibold border-b border-maroon/40">Enquire →</a>
-      </article>
-      <article class="bg-ivory p-6 border border-gold/30">
-        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#6B1E2E" stroke-width="1.2"><path d="M13 4h10l-1 7 6 21H8l6-21z"/><path d="M14 11h8"/></svg>
-        <h3 class="font-display text-2xl mt-3">Custom dresses</h3>
-        <p class="text-muted mt-1">Bring an idea or a picture; we'll make it yours.</p>
-        <a data-wa="Hi Saanvi! I'm interested in Custom dresses." href="#" target="_blank" rel="noopener" class="mt-4 inline-flex items-center min-h-[44px] text-maroon font-semibold border-b border-maroon/40">Enquire →</a>
-      </article>
-      <article class="bg-ivory p-6 border border-gold/30">
-        <svg aria-hidden="true" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="#6B1E2E" stroke-width="1.2"><rect x="6" y="10" width="24" height="18"/><path d="M6 16h24M6 22h24"/><path d="M12 10V6h12v4"/></svg>
-        <h3 class="font-display text-2xl mt-3">Dress materials</h3>
-        <p class="text-muted mt-1">A curated collection to choose from in-store.</p>
-        <a data-wa="Hi Saanvi! I'm interested in Dress materials." href="#" target="_blank" rel="noopener" class="mt-4 inline-flex items-center min-h-[44px] text-maroon font-semibold border-b border-maroon/40">Enquire →</a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- 4. Lookbook -->
-<section id="lookbook" class="py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="eyebrow">The lookbook</p>
-    <h2 class="font-display text-5xl md:text-6xl mt-3 text-maroon leading-none">Stitched<br><em>at Saanvi</em></h2>
-    <div class="mt-8 -mx-6 px-6 flex gap-2 overflow-x-auto no-scrollbar" role="group" aria-label="Filter lookbook" id="lookFilters">
-      <button type="button" data-f="all" class="shrink-0 min-h-[44px] px-5 border text-sm tracking-wide">All</button>
-      <button type="button" data-f="bridal" class="shrink-0 min-h-[44px] px-5 border text-sm tracking-wide">Bridal</button>
-      <button type="button" data-f="festive" class="shrink-0 min-h-[44px] px-5 border text-sm tracking-wide">Festive</button>
-      <button type="button" data-f="everyday" class="shrink-0 min-h-[44px] px-5 border text-sm tracking-wide">Everyday</button>
-    </div>
-    <div id="lookGrid" class="mt-6 columns-2 md:columns-3 gap-3 [&>*]:mb-3"></div>
-    <p class="text-xs text-muted">Tap a look for details · Sample captions — your real collection names go here.</p>
-    <div class="mt-6 border-l-2 border-gold pl-4 py-1">
-      <p class="font-display italic text-xl text-maroon">Your own work will be shot and featured here.</p>
-    </div>
-  </div>
-</section>
-
-<!-- 5. How it works -->
-<section class="bg-maroon text-ivory py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="eyebrow !text-[#E9C98F]">How it works</p>
-    <h2 class="font-display text-4xl md:text-5xl mt-3">From first sketch to final fit</h2>
-    <ol class="mt-10 grid gap-8 md:grid-cols-4">
-      <li class="flex md:flex-col gap-4">
-        <svg aria-hidden="true" class="shrink-0" width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#E9C98F" stroke-width="1.2"><path d="M6 10h24v16H16l-6 6v-6H6z"/><path d="M30 16h8v14h-4v5l-5-5H18v-4"/></svg>
-        <div><p class="text-xs tracking-[.25em] text-[#E9C98F]">01</p><h3 class="font-display text-2xl">Consult</h3><p class="text-ivory/80 text-sm mt-1">Share your idea, occasion and pictures you love.</p></div>
-      </li>
-      <li class="flex md:flex-col gap-4">
-        <svg aria-hidden="true" class="shrink-0" width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#E9C98F" stroke-width="1.2"><path d="M4 28c0-10 8-16 18-16s18 6 18 16"/><path d="M4 28h36v6H4z"/><path d="M10 28v3M16 28v4M22 28v3M28 28v4M34 28v3"/></svg>
-        <div><p class="text-xs tracking-[.25em] text-[#E9C98F]">02</p><h3 class="font-display text-2xl">Measure</h3><p class="text-ivory/80 text-sm mt-1">Precise measurements, taken in the studio.</p></div>
-      </li>
-      <li class="flex md:flex-col gap-4">
-        <svg aria-hidden="true" class="shrink-0" width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#E9C98F" stroke-width="1.2"><path d="M22 6a4 4 0 1 1 4 4c-2 0-4 1-4 3v3"/><path d="M22 16L4 32h36z"/></svg>
-        <div><p class="text-xs tracking-[.25em] text-[#E9C98F]">03</p><h3 class="font-display text-2xl">Trial fitting</h3><p class="text-ivory/80 text-sm mt-1">Try it on, and we refine every detail.</p></div>
-      </li>
-      <li class="flex md:flex-col gap-4">
-        <svg aria-hidden="true" class="shrink-0" width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#E9C98F" stroke-width="1.2"><rect x="6" y="14" width="32" height="22"/><path d="M6 14l16 10 16-10"/><path d="M16 8l6 6 6-6"/></svg>
-        <div><p class="text-xs tracking-[.25em] text-[#E9C98F]">04</p><h3 class="font-display text-2xl">On-time delivery</h3><p class="text-ivory/80 text-sm mt-1">Ready when you need it — before the big day.</p></div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<!-- 6. Book a consultation -->
-<section id="book" class="py-16 md:py-24">
-  <div class="max-w-2xl mx-auto px-6">
-    <p class="eyebrow text-center">By appointment</p>
-    <h2 class="font-display text-4xl md:text-5xl mt-3 text-center text-maroon">Book a consultation</h2>
-    <div class="rule my-6 max-w-xs mx-auto"></div>
-    <p class="text-center text-muted">Tell us a little about your outfit. This opens WhatsApp with everything filled in — we'll reply to confirm your visit.</p>
-    <form id="consultForm" novalidate class="mt-8 grid gap-5 bg-white/60 border border-gold/30 p-5 md:p-8">
-      <div>
-        <label for="name" class="eyebrow">Your name</label>
-        <input id="name" name="name" class="field" autocomplete="name" placeholder="e.g. Ananya" required>
-        <p class="err" id="name-err" aria-live="polite"></p>
-      </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div>
-          <label for="outfit" class="eyebrow">Outfit</label>
-          <select id="outfit" name="outfit" class="field" required>
-            <option value="">Choose…</option>
-            <option>Lehenga</option><option>Blouse</option><option>Custom dress</option><option>Dress material</option><option>Other</option>
-          </select>
-          <p class="err" id="outfit-err" aria-live="polite"></p>
+  <section class="wrap services">
+    <h2 class="d">What Supriya makes</h2>
+    <div class="swatches">
+      <article class="swatch">
+        <div class="cloth" style="--c:#B5172F"></div>
+        <div class="body">
+          <h3>Lehenga stitching</h3>
+          <p>Bridal and festive lehengas with a perfect fit.</p>
+          <a data-wa="Hi Saanvi! I'm interested in Lehenga stitching." href="#">Ask about lehengas</a>
         </div>
-        <div>
-          <label for="occasion" class="eyebrow">Occasion</label>
-          <select id="occasion" name="occasion" class="field" required>
-            <option value="">Choose…</option>
-            <option>Wedding</option><option>Festival</option><option>Party</option><option>Everyday</option>
-          </select>
-          <p class="err" id="occasion-err" aria-live="polite"></p>
+      </article>
+      <article class="swatch">
+        <div class="cloth" style="--c:#0E5A57"></div>
+        <div class="body">
+          <h3>Blouse and custom stitching</h3>
+          <p>Your design, your measurements, our craft.</p>
+          <a data-wa="Hi Saanvi! I'm interested in Blouse & custom stitching." href="#">Ask about blouses</a>
+        </div>
+      </article>
+      <article class="swatch">
+        <div class="cloth" style="--c:#F2C230"></div>
+        <div class="body">
+          <h3>Custom dresses</h3>
+          <p>Bring an idea or a picture, and we'll make it yours.</p>
+          <a data-wa="Hi Saanvi! I'm interested in Custom dresses." href="#">Ask about dresses</a>
+        </div>
+      </article>
+      <article class="swatch">
+        <div class="cloth" style="--c:#3A2F5B"></div>
+        <div class="body">
+          <h3>Dress materials</h3>
+          <p>A curated collection to choose from in the studio.</p>
+          <a data-wa="Hi Saanvi! I'm interested in Dress materials." href="#">Ask about materials</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <h2 class="d">From first sketch to final fit</h2>
+      <ol class="steps">
+        <li><span class="n" aria-hidden="true">1</span><h3>Consult</h3><p>Share your idea, the occasion and pictures you love.</p></li>
+        <li><span class="n" aria-hidden="true">2</span><h3>Measure</h3><p>Precise measurements, taken at the studio.</p></li>
+        <li><span class="n" aria-hidden="true">3</span><h3>Trial fitting</h3><p>Try it on, and every detail is adjusted.</p></li>
+        <li><span class="n" aria-hidden="true">4</span><h3>On-time delivery</h3><p>Ready before the day you need it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="wrap love">
+    <h2 class="sr-only">What clients say</h2>
+    <ul>
+      <li>Perfect fit, every time</li>
+      <li>Always delivered on time</li>
+      <li>Feels like family</li>
+    </ul>
+    <p class="note" style="margin-top:1rem">Themes from Saanvi's Google reviews, paraphrased.</p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener">Read 300+ reviews on Google</a>
+  </section>
+
+  <section class="visit" id="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <h2 class="d">Visit the studio</h2>
+        <address>5, 4th Main, 4/A, 7th Cross Rd, Saraswathipuram, Mysuru, Karnataka 570009</address>
+        <dl class="hours">
+          <dt>Monday to Saturday</dt><dd>10:30 AM to 7:30 PM</dd>
+          <dt>Sunday</dt><dd>Closed</dd>
+        </dl>
+        <div class="actions" style="margin-top:1.75rem">
+          <a class="btn solid" data-wa="Hi Saanvi! I'd like to visit the studio." href="#">WhatsApp</a>
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener">Directions</a>
         </div>
       </div>
-      <div>
-        <label for="eventDate" class="eyebrow">Event date <span class="normal-case tracking-normal text-muted">(optional)</span></label>
-        <input id="eventDate" name="eventDate" type="date" class="field">
-        <p class="err" id="eventDate-err" aria-live="polite"></p>
-      </div>
-      <fieldset>
-        <legend class="eyebrow">Preferred visit day</legend>
-        <p class="text-xs text-muted mt-1">Open Mon–Sat, 10:30 AM – 7:30 PM · <strong class="text-maroon font-medium">We're closed Sundays</strong></p>
-        <div id="dayChips" class="mt-3 grid grid-cols-3 gap-2"></div>
-        <p class="err" id="day-err" aria-live="polite"></p>
-        <div class="mt-2 grid grid-cols-3 gap-2" id="slotChips">
-          <div class="chip"><input class="sr-only" type="radio" name="slot" id="s1" value="morning"><label for="s1" class="flex items-center justify-center min-h-[44px] border border-[#D8CBBB] text-sm cursor-pointer">Morning</label></div>
-          <div class="chip"><input class="sr-only" type="radio" name="slot" id="s2" value="afternoon" checked><label for="s2" class="flex items-center justify-center min-h-[44px] border border-[#D8CBBB] text-sm cursor-pointer">Afternoon</label></div>
-          <div class="chip"><input class="sr-only" type="radio" name="slot" id="s3" value="evening"><label for="s3" class="flex items-center justify-center min-h-[44px] border border-[#D8CBBB] text-sm cursor-pointer">Evening</label></div>
-        </div>
-      </fieldset>
-      <div>
-        <label for="notes" class="eyebrow">Notes <span class="normal-case tracking-normal text-muted">(optional)</span></label>
-        <textarea id="notes" name="notes" rows="2" class="field" placeholder="Colours, references, budget…"></textarea>
-      </div>
-      <button id="submitBtn" type="submit" class="mt-2 w-full min-h-[56px] bg-maroon hover:bg-[#561624] text-ivory font-semibold tracking-wide flex items-center justify-center gap-2 transition active:scale-[.98] disabled:opacity-70">
-        <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1Z"/></svg>
-        <span id="submitLabel">Request on WhatsApp</span>
-      </button>
-    </form>
-  </div>
-</section>
-
-<!-- 7. Loved by our clients -->
-<section class="bg-sand py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6 text-center">
-    <p class="eyebrow">Loved by our clients</p>
-    <div class="mt-8 grid gap-8 md:grid-cols-3">
-      <div><p class="text-goldink text-lg" aria-hidden="true">✦</p><p class="font-display text-3xl text-maroon mt-2">Perfect fit, every time</p></div>
-      <div><p class="text-goldink text-lg" aria-hidden="true">✦</p><p class="font-display text-3xl text-maroon mt-2">Always delivered on time</p></div>
-      <div><p class="text-goldink text-lg" aria-hidden="true">✦</p><p class="font-display text-3xl text-maroon mt-2">Feels like family</p></div>
+      <iframe title="Map showing Saanvi by Supriya Manjunath, Saraswathipuram" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Saanvi%20by%20Supriya%20Manjunath%20Saraswathipuram%20Mysuru&z=16&output=embed"></iframe>
     </div>
-    <a href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener" class="mt-10 inline-flex items-center min-h-[48px] px-6 border border-maroon text-maroon font-medium tracking-wide">Read 300+ reviews on Google →</a>
-  </div>
-</section>
+  </section>
 
-<!-- 8. Visit the studio -->
-<section id="visit" class="py-16 md:py-24">
-  <div class="max-w-5xl mx-auto px-6 grid gap-8 md:grid-cols-2 md:items-center">
-    <div>
-      <p class="eyebrow">Visit the studio</p>
-      <h2 class="font-display text-4xl md:text-5xl mt-3 text-maroon">Saraswathipuram, Mysuru</h2>
-      <div class="rule my-6 max-w-[10rem]"></div>
-      <address class="not-italic leading-relaxed">5, 4th Main, 4/A, 7th Cross Rd,<br>Saraswathipuram, Mysuru,<br>Karnataka 570009</address>
-      <dl class="mt-5 text-sm grid grid-cols-[auto_1fr] gap-x-6 gap-y-1">
-        <dt class="text-muted">Mon – Sat</dt><dd>10:30 AM – 7:30 PM</dd>
-        <dt class="text-muted">Sunday</dt><dd>Closed</dd>
-      </dl>
-      <div class="mt-7 grid grid-cols-2 gap-3">
-        <a data-wa="Hi Saanvi! I'd like to visit the studio." href="#" target="_blank" rel="noopener" class="flex items-center justify-center min-h-[52px] bg-maroon text-ivory font-medium">💬 WhatsApp</a>
-        <a href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener" class="flex items-center justify-center min-h-[52px] border border-maroon text-maroon font-medium">📍 Directions</a>
-      </div>
-    </div>
-    <iframe title="Map showing Saanvi by Supriya Manjunath, Saraswathipuram" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-72 md:h-96 border border-gold/40 grayscale-[.3]" src="https://maps.google.com/maps?q=Saanvi%20by%20Supriya%20Manjunath%20Saraswathipuram%20Mysuru&z=16&output=embed"></iframe>
-  </div>
-</section>
 </main>
 
-<!-- 9. Footer -->
-<footer class="bg-charcoal text-ivory/80 text-sm py-10 px-6 text-center">
-  <p class="font-display text-3xl text-ivory">Saanvi</p>
-  <p class="mt-2">© 2026 Saanvi by Supriya Manjunath</p>
-  <p class="mt-1">Website concept by Vivan — <a href="https://v1therun.com" class="underline text-ivory">v1therun.com</a></p>
+<footer class="site">
+  <p class="d">Saanvi</p>
+  <p>© 2026 Saanvi by Supriya Manjunath</p>
+  <p>Website concept by Vivan — <a href="https://v1therun.com" data-no-barba>v1therun.com</a></p>
 </footer>
 
-<!-- Sticky mobile bar -->
-<nav class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-[1.6fr_1fr] text-sm font-medium tracking-wide" style="padding-bottom: env(safe-area-inset-bottom); background:#2A2426" aria-label="Quick contact">
-  <a data-wa="Hi Saanvi! I'd like to book a consultation." href="#" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 min-h-[60px] bg-maroon text-ivory">💬 Book on WhatsApp</a>
-  <a href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 min-h-[60px] text-ivory">📍 Visit</a>
+<nav class="dock" aria-label="Quick contact">
+  <a class="wa" data-wa="Hi Saanvi! I'd like to book a consultation." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1Z"/></svg>Book on WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Saanvi+by+Supriya+Manjunath+Saraswathipuram+Mysuru" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>Visit</a>
 </nav>
 
-<script>
-  const WA = 'https://wa.me/917338114466?text=';
-  const waLink = (msg) => WA + encodeURIComponent(msg);
-  document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink(a.dataset.wa));
+<div class="curtain" aria-hidden="true"><p class="curtain-title"></p></div>
 
-  // ---- Lookbook ----
-  const U = (id, h) => `https://images.unsplash.com/photo-${id}?w=600&h=${h}&fit=crop&q=65&auto=format`;
-  const LOOKS = [
-    ['1610173827043-9db50e0d8ef9', 'bridal', 'Crimson bridal ensemble', 'Bridal · hand-finished detailing', 820, 'Bride in a red bridal outfit with heavy jewellery'],
-    ['1597983073493-88cd35cf93b0', 'festive', 'Garden-party kurta set', 'Festive · printed silk', 700, 'Woman in a green and pink festive kurta'],
-    ['1609357605129-26f69add5d6e', 'everyday', 'Teal wrap dress', 'Everyday · custom dress', 760, 'Woman in a flowing teal dress outdoors'],
-    ['1617627143750-d86bc21e42bb', 'bridal', 'Muhurtham silk & gold', 'Bridal · blouse stitching', 760, 'Woman in a red and gold silk saree with temple jewellery'],
-    ['1610030469983-98e550d6193c', 'festive', 'Plum & gold drape', 'Festive · blouse stitching', 820, 'Woman in a purple saree with gold border'],
-    ['1585487000160-6ebcfceb0d03', 'everyday', 'Wine shirt-dress', 'Everyday · custom dress', 700, 'Woman in a maroon button-down dress'],
-    ['1583391733956-3750e0ff4e8b', 'bridal', 'Ivory sangeet anarkali', 'Bridal · lehenga & dupatta', 800, 'Woman in an ivory anarkali with a sheer dupatta'],
-    ['1610030469668-8e9f641aaf27', 'festive', 'Monochrome silk', 'Festive · blouse stitching', 760, 'Woman in a black and silver saree'],
-    ['1596783074918-c84cb06531ca', 'everyday', 'Peach day dress', 'Everyday · custom dress', 700, 'Woman in a peach midi dress'],
-  ];
-  const grid = document.getElementById('lookGrid');
-  grid.innerHTML = LOOKS.map(([id, cat, title, sub, h, alt]) => `
-    <figure class="look relative overflow-hidden cursor-pointer" data-cat="${cat}" tabindex="0" role="button" aria-label="${title} — show details">
-      <img loading="lazy" src="${U(id, h)}" alt="${alt}" width="600" height="${h}" class="w-full h-auto block">
-      <figcaption class="absolute inset-x-0 bottom-0 p-3 pt-10 bg-gradient-to-t from-black/80 to-transparent text-ivory">
-        <p class="font-display text-xl leading-tight">${title}</p><p class="text-[11px] tracking-wider uppercase text-ivory/85">${sub}</p>
-      </figcaption>
-    </figure>`).join('');
-  grid.querySelectorAll('.look').forEach(el => {
-    const t = () => el.classList.toggle('open');
-    el.onclick = t; el.onkeydown = e => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), t());
-  });
-  const filters = document.querySelectorAll('#lookFilters button');
-  function filter(f) {
-    filters.forEach(b => {
-      const on = b.dataset.f === f;
-      b.setAttribute('aria-pressed', on);
-      b.classList.toggle('bg-maroon', on); b.classList.toggle('text-ivory', on); b.classList.toggle('border-maroon', on);
-      b.classList.toggle('border-[#D8CBBB]', !on);
-    });
-    grid.querySelectorAll('.look').forEach(el => el.style.display = (f === 'all' || el.dataset.cat === f) ? '' : 'none');
-  }
-  filters.forEach(b => b.onclick = () => filter(b.dataset.f));
-  filter('all');
-
-  // ---- Consultation form ----
-  const f = document.getElementById('consultForm');
-  const pad = n => String(n).padStart(2, '0');
-  const iso = d => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
-  const now = new Date(); f.eventDate.min = iso(now);
-
-  // Next 6 open days (Mon–Sat). Skip today if past closing time; never offer Sunday.
-  const days = []; const d = new Date(now);
-  if (now.getHours() * 60 + now.getMinutes() > 18 * 60) d.setDate(d.getDate() + 1);
-  while (days.length < 6) { if (d.getDay() !== 0) days.push(new Date(d)); d.setDate(d.getDate() + 1); }
-  const wk = d => d.toLocaleDateString('en-GB', { weekday: 'short' });
-  const dm = d => d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
-  document.getElementById('dayChips').innerHTML = days.map((x, i) => `
-    <div class="chip"><input class="sr-only" type="radio" name="day" id="d${i}" value="${iso(x)}"><label for="d${i}" class="flex flex-col items-center justify-center min-h-[56px] border border-[#D8CBBB] cursor-pointer leading-tight"><span class="text-sm font-medium">${i === 0 && iso(x) === iso(now) ? 'Today' : wk(x)}</span><span class="text-xs opacity-80">${dm(x)}</span></label></div>`).join('');
-
-  function setErr(id, msg, field) {
-    if (field) field.setAttribute('aria-invalid', msg ? 'true' : 'false');
-    document.getElementById(id + '-err').textContent = msg || '';
-    return !msg;
-  }
-  function validate() {
-    let ok = true, first = null;
-    const check = (id, field, msg, focusEl) => { if (!setErr(id, msg, field)) { ok = false; first = first || focusEl || field; } };
-    check('name', f.name, f.name.value.trim().length < 2 ? 'Please enter your name' : '');
-    check('outfit', f.outfit, !f.outfit.value ? 'Pick an outfit type' : '');
-    check('occasion', f.occasion, !f.occasion.value ? 'Pick the occasion' : '');
-    check('eventDate', f.eventDate, f.eventDate.value && f.eventDate.value < iso(now) ? 'That date has passed' : '');
-    const day = f.querySelector('input[name=day]:checked');
-    const isSun = day && new Date(day.value + 'T12:00').getDay() === 0;
-    check('day', null, !day ? 'Pick a day to visit (Mon–Sat)' : isSun ? "We're closed Sundays — please pick Mon–Sat" : '', document.getElementById('d0'));
-    if (first) first.focus();
-    return ok;
-  }
-  f.addEventListener('change', () => f.querySelector('[aria-invalid="true"]') || document.getElementById('day-err').textContent ? validate() : null);
-
-  f.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (!validate()) return;
-    const day = new Date(f.day.value + 'T12:00');
-    let occ = f.occasion.value;
-    if (f.eventDate.value) occ += ` — ${dm(new Date(f.eventDate.value + 'T12:00'))}`;
-    const lines = [
-      "Hi Saanvi! I'd like to book a consultation.",
-      `Name: ${f.name.value.trim()}`,
-      `Outfit: ${f.outfit.value}`,
-      `Occasion: ${occ}`,
-      `Preferred visit: ${wk(day)} ${dm(day)}, ${f.slot.value}`,
-    ];
-    if (f.notes.value.trim()) lines.push(`Notes: ${f.notes.value.trim()}`);
-    const url = waLink(lines.join('\n'));
-    const btn = document.getElementById('submitBtn'), label = document.getElementById('submitLabel');
-    btn.disabled = true; label.textContent = 'Opening WhatsApp…';
-    setTimeout(() => {
-      if (!window.open(url, '_blank')) location.href = url;
-      btn.disabled = false; label.textContent = 'Request on WhatsApp';
-    }, 350);
-  });
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.11/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.js"></script>
+<script src="assets/site.js"></script>
 </body>
 </html>
