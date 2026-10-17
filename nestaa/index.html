@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Cafe Nestaa — website concept</title>
+<meta name="description" content="Concept website for Cafe Nestaa, Kuvempunagar, Mysuru — celebration packages, menu and booking on WhatsApp.">
+<meta property="og:title" content="Cafe Nestaa — website concept">
+<meta property="og:description" content="Menu, celebration packages & booking — a concept by Vivan">
+<meta property="og:image" content="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&h=630&fit=crop&q=70">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#3B2A20">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cream: '#FFF8F0',
+          coffee: '#3B2A20',
+          mocha: '#6B5446',
+          coral: '#F06A4D',
+          coralink: '#B23E25',
+          gold: '#E8B44C',
+        },
+        fontFamily: {
+          display: ['Fraunces', 'Georgia', 'serif'],
+          sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 2.5rem; }
+  body { -webkit-tap-highlight-color: transparent; }
+  .confetti {
+    background-image:
+      radial-gradient(circle, #F06A4D 2.5px, transparent 3px),
+      radial-gradient(circle, #E8B44C 2.5px, transparent 3px),
+      radial-gradient(circle, #3B2A20 1.5px, transparent 2px);
+    background-size: 90px 90px, 130px 130px, 70px 70px;
+    background-position: 10px 20px, 60px 80px, 35px 5px;
+    opacity: .18;
+  }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { scrollbar-width: none; }
+  .field { width: 100%; min-height: 48px; border-radius: .75rem; border: 1.5px solid #E5D6C6; background: #fff; padding: .7rem .9rem; font-size: 16px; color: #3B2A20; }
+  .field:focus { outline: none; border-color: #B23E25; box-shadow: 0 0 0 3px rgba(240,106,77,.25); }
+  .field[aria-invalid="true"] { border-color: #B23E25; background: #FFF3F0; }
+  .err { color: #B23E25; font-size: .8rem; margin-top: .25rem; min-height: 1rem; }
+  .pkg input:checked + label { border-color: #B23E25; box-shadow: 0 0 0 3px rgba(240,106,77,.25); }
+  .pkg input:focus-visible + label { outline: 3px solid #E8B44C; outline-offset: 2px; }
+</style>
+</head>
+<body class="bg-cream text-coffee font-sans antialiased pb-24 md:pb-0">
+
+<!-- Honesty ribbon -->
+<div class="fixed top-0 inset-x-0 z-50 bg-coffee text-cream text-[11px] leading-tight text-center py-1.5 px-3">
+  Concept demo by Vivan · <a href="https://v1therun.com" class="underline">v1therun.com</a> — not the official Cafe Nestaa site
+</div>
+
+<!-- 1. Hero -->
+<header class="relative min-h-[92svh] flex items-end pt-8 text-white">
+  <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1200&q=70&auto=format" alt="Warm café interior with wooden tables and plants" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high">
+  <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/30"></div>
+  <div class="relative w-full max-w-5xl mx-auto px-5 pb-10 md:pb-20">
+    <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Nestaa+Kuvempunagar+Mysuru" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur border border-white/25 rounded-full px-3 py-1.5 text-sm font-medium min-h-[36px]">
+      <span class="text-gold" aria-hidden="true">★</span> 4.6 · 1,200+ Google reviews
+    </a>
+    <h1 class="font-display text-[3.4rem] leading-[1] md:text-7xl mt-4">Cafe Nestaa</h1>
+    <p class="mt-3 text-lg md:text-xl text-white/90 max-w-md">Good food, great vibes, and the best birthday setups in Kuvempunagar.</p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      <a href="#celebrate" class="inline-flex justify-center items-center min-h-[52px] px-6 rounded-full bg-coral text-[#24170F] font-bold text-base shadow-lg shadow-black/20">🎉 Book a celebration</a>
+      <a href="#menu" class="inline-flex justify-center items-center min-h-[52px] px-6 rounded-full border-2 border-white/80 font-semibold">See the menu</a>
+    </div>
+    <p class="mt-5 text-sm text-white/80">Open daily · 11 AM – 10 PM · 1st floor, Anikethana Road</p>
+  </div>
+</header>
+
+<main>
+<!-- 2. Celebrate -->
+<section id="celebrate" class="relative overflow-hidden bg-[#FDEFE3] py-14 md:py-20">
+  <div class="confetti absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+  <div class="relative max-w-5xl mx-auto px-5">
+    <p class="text-coralink font-bold uppercase tracking-widest text-xs">Birthdays · Bride-to-be · Surprises</p>
+    <h2 class="font-display text-4xl md:text-5xl mt-2">Celebrate with us</h2>
+    <p class="mt-3 text-mocha max-w-xl">Birthdays, bride-to-be parties, surprise plans and small get-togethers — pick a setup, tell us the date, and we'll have the table ready when you walk in.</p>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <article class="bg-white rounded-2xl p-5 shadow-sm border border-[#F1DFCF]">
+        <div class="text-3xl" aria-hidden="true">🎂</div>
+        <h3 class="font-display text-2xl mt-2">Mini Surprise</h3>
+        <p class="text-mocha mt-1">Table decor + cake-cutting setup. Perfect for a quick surprise.</p>
+        <p class="mt-4 font-bold">from ₹___</p>
+        <button type="button" data-pick="Mini Surprise" class="pick mt-4 w-full min-h-[48px] rounded-full border-2 border-coffee font-semibold hover:bg-coffee hover:text-cream transition">Choose Mini Surprise</button>
+      </article>
+      <article class="relative bg-coffee text-cream rounded-2xl p-5 shadow-lg md:-translate-y-2">
+        <span class="absolute -top-3 right-5 bg-gold text-coffee text-xs font-bold px-3 py-1 rounded-full">Most loved</span>
+        <div class="text-3xl" aria-hidden="true">🎈</div>
+        <h3 class="font-display text-2xl mt-2">Classic Celebration</h3>
+        <p class="text-cream/85 mt-1">Balloon setup, table styling and a music request.</p>
+        <p class="mt-4 font-bold">from ₹___</p>
+        <button type="button" data-pick="Classic Celebration" class="pick mt-4 w-full min-h-[48px] rounded-full bg-coral text-[#24170F] font-bold">Choose Classic</button>
+      </article>
+      <article class="bg-white rounded-2xl p-5 shadow-sm border border-[#F1DFCF]">
+        <div class="text-3xl" aria-hidden="true">✨</div>
+        <h3 class="font-display text-2xl mt-2">Grand Setup</h3>
+        <p class="text-mocha mt-1">Full corner decor with a photo backdrop for the big ones.</p>
+        <p class="mt-4 font-bold">from ₹___</p>
+        <button type="button" data-pick="Grand Setup" class="pick mt-4 w-full min-h-[48px] rounded-full border-2 border-coffee font-semibold hover:bg-coffee hover:text-cream transition">Choose Grand</button>
+      </article>
+    </div>
+    <p class="mt-3 text-xs text-[#6F6259]">Sample packages — your real packages and prices go here.</p>
+
+    <p class="mt-6 inline-flex items-center gap-2 bg-white/80 rounded-full px-4 py-2 text-sm font-semibold border border-[#F1DFCF]">
+      <span aria-hidden="true">🍰</span> Bring your own cake — we'll set the stage.
+    </p>
+
+    <!-- Booking form -->
+    <div id="book" class="mt-10 bg-white rounded-3xl shadow-xl shadow-coffee/10 border border-[#F1DFCF] p-5 md:p-8 max-w-2xl">
+      <h3 class="font-display text-3xl">Book your celebration</h3>
+      <p class="text-mocha mt-1 text-sm">Fill this in and it lands straight on our WhatsApp. We'll confirm in a reply.</p>
+      <form id="bookingForm" novalidate class="mt-6 grid gap-4">
+        <div>
+          <label for="name" class="block text-sm font-semibold mb-1">Your name</label>
+          <input id="name" name="name" class="field" autocomplete="name" placeholder="e.g. Priya" required>
+          <p class="err" id="name-err" aria-live="polite"></p>
+        </div>
+        <div>
+          <label for="occasion" class="block text-sm font-semibold mb-1">Occasion</label>
+          <select id="occasion" name="occasion" class="field" required>
+            <option value="">Choose one…</option>
+            <option>Birthday</option>
+            <option>Bride-to-be</option>
+            <option>Surprise party</option>
+            <option>Anniversary</option>
+            <option>Get-together</option>
+            <option>Other</option>
+          </select>
+          <p class="err" id="occasion-err" aria-live="polite"></p>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label for="date" class="block text-sm font-semibold mb-1">Date</label>
+            <input id="date" name="date" type="date" class="field" required>
+            <p class="err" id="date-err" aria-live="polite"></p>
+          </div>
+          <div>
+            <label for="time" class="block text-sm font-semibold mb-1">Time</label>
+            <input id="time" name="time" type="time" class="field" min="11:00" max="21:30" step="900" required>
+            <p class="err" id="time-err" aria-live="polite"></p>
+          </div>
+        </div>
+        <div>
+          <label for="guests" class="block text-sm font-semibold mb-1">Number of guests</label>
+          <div class="flex items-center gap-2">
+            <button type="button" id="gMinus" class="w-12 h-12 shrink-0 rounded-xl border-2 border-[#E5D6C6] text-xl font-bold" aria-label="Fewer guests">−</button>
+            <input id="guests" name="guests" type="number" inputmode="numeric" min="1" max="40" value="6" class="field text-center" required>
+            <button type="button" id="gPlus" class="w-12 h-12 shrink-0 rounded-xl border-2 border-[#E5D6C6] text-xl font-bold" aria-label="More guests">+</button>
+          </div>
+          <p class="err" id="guests-err" aria-live="polite"></p>
+        </div>
+        <fieldset>
+          <legend class="block text-sm font-semibold mb-2">Package</legend>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <div class="pkg"><input class="sr-only" type="radio" name="package" id="p1" value="Mini Surprise"><label for="p1" class="flex items-center justify-center text-center min-h-[48px] px-2 rounded-xl border-2 border-[#E5D6C6] cursor-pointer font-medium">🎂 Mini Surprise</label></div>
+            <div class="pkg"><input class="sr-only" type="radio" name="package" id="p2" value="Classic Celebration" checked><label for="p2" class="flex items-center justify-center text-center min-h-[48px] px-2 rounded-xl border-2 border-[#E5D6C6] cursor-pointer font-medium">🎈 Classic</label></div>
+            <div class="pkg"><input class="sr-only" type="radio" name="package" id="p3" value="Grand Setup"><label for="p3" class="flex items-center justify-center text-center min-h-[48px] px-2 rounded-xl border-2 border-[#E5D6C6] cursor-pointer font-medium">✨ Grand Setup</label></div>
+            <div class="pkg"><input class="sr-only" type="radio" name="package" id="p4" value="Not sure yet — please suggest"><label for="p4" class="flex items-center justify-center text-center min-h-[48px] px-2 rounded-xl border-2 border-[#E5D6C6] cursor-pointer font-medium">🤔 Not sure yet</label></div>
+          </div>
+        </fieldset>
+        <div>
+          <label for="notes" class="block text-sm font-semibold mb-1">Notes <span class="font-normal text-mocha">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" class="field" placeholder="Theme, colours, surprise timing…"></textarea>
+        </div>
+        <button id="submitBtn" type="submit" class="w-full min-h-[56px] rounded-full bg-[#16733D] hover:bg-[#115C30] text-white font-bold text-lg flex items-center justify-center gap-2 transition active:scale-[.98] disabled:opacity-70">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1Z"/></svg>
+          <span id="submitLabel">Send booking on WhatsApp</span>
+        </button>
+        <p class="text-xs text-[#6F6259] text-center -mt-1">Opens WhatsApp with your details filled in — nothing is sent until you tap send.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Menu -->
+<section id="menu" class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="font-display text-4xl md:text-5xl">The menu</h2>
+    <div class="mt-4 rounded-xl bg-[#FFF1D6] border border-gold/60 px-4 py-3 text-sm">
+      <strong>Sample menu</strong> — your real menu with prices goes here. Updates anytime.
+    </div>
+    <p class="mt-3 text-sm text-mocha"><span aria-hidden="true">🛎️</span> Order at the counter.</p>
+
+    <div class="mt-6 -mx-5 px-5 flex gap-2 overflow-x-auto no-scrollbar" role="tablist" aria-label="Menu categories" id="menuTabs"></div>
+    <ul id="menuList" class="mt-5 divide-y divide-[#EADBCB] bg-white rounded-2xl border border-[#F1DFCF] px-4" role="tabpanel"></ul>
+    <p class="mt-3 flex items-center gap-4 text-xs text-mocha">
+      <span class="inline-flex items-center gap-1.5"><span class="veg"></span> Veg</span>
+      <span class="inline-flex items-center gap-1.5"><span class="nonveg"></span> Non-veg</span>
+    </p>
+  </div>
+</section>
+
+<!-- 4. Why people love Nestaa -->
+<section class="bg-coffee text-cream py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="font-display text-4xl md:text-5xl">Why people love Nestaa</h2>
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+        <div class="text-3xl" aria-hidden="true">🎉</div>
+        <h3 class="font-display text-2xl mt-2">Perfect for birthdays</h3>
+        <p class="text-cream/80 mt-1 text-sm">Decorated setups that turn a regular evening into a celebration.</p>
+      </div>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+        <div class="text-3xl" aria-hidden="true">🥗</div>
+        <h3 class="font-display text-2xl mt-2">Plenty of veg options</h3>
+        <p class="text-cream/80 mt-1 text-sm">Something on the menu for everyone in the group.</p>
+      </div>
+      <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+        <div class="text-3xl" aria-hidden="true">☕</div>
+        <h3 class="font-display text-2xl mt-2">Cosy spot to hang out or work</h3>
+        <p class="text-cream/80 mt-1 text-sm">Come with friends, or bring your laptop and stay a while.</p>
+      </div>
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Nestaa+Kuvempunagar+Mysuru" target="_blank" rel="noopener" class="mt-8 inline-flex items-center min-h-[48px] px-6 rounded-full bg-gold text-coffee font-bold">Read our 1,200+ reviews on Google →</a>
+  </div>
+</section>
+
+<!-- 5. Gallery -->
+<section class="py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5">
+    <h2 class="font-display text-4xl md:text-5xl">A peek inside</h2>
+    <div class="mt-6 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3" id="gallery">
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=600&fit=crop&q=65&auto=format" alt="Café interior with hanging lights" class="w-full h-full object-cover hover:scale-105 transition"></button>
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&h=600&fit=crop&q=65&auto=format" alt="Colourful balloons for a birthday setup" class="w-full h-full object-cover hover:scale-105 transition"></button>
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&h=600&fit=crop&q=65&auto=format" alt="Plate of pasta" class="w-full h-full object-cover hover:scale-105 transition"></button>
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&h=600&fit=crop&q=65&auto=format" alt="Basket of loaded fries" class="w-full h-full object-cover hover:scale-105 transition"></button>
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600&h=600&fit=crop&q=65&auto=format" alt="Chocolate Oreo milkshake" class="w-full h-full object-cover hover:scale-105 transition"></button>
+      <button type="button" class="aspect-square overflow-hidden rounded-xl"><img loading="lazy" src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=600&h=600&fit=crop&q=65&auto=format" alt="Friends raising a toast at a celebration" class="w-full h-full object-cover hover:scale-105 transition"></button>
+    </div>
+    <p class="mt-3 text-xs text-[#6F6259]">Placeholder photos — your own café and setups go here.</p>
+  </div>
+</section>
+
+<!-- 6. Visit us -->
+<section id="visit" class="bg-[#FDEFE3] py-14 md:py-20">
+  <div class="max-w-5xl mx-auto px-5 grid gap-8 md:grid-cols-2 md:items-center">
+    <div>
+      <h2 class="font-display text-4xl md:text-5xl">Visit us</h2>
+      <address class="not-italic mt-4 text-mocha leading-relaxed">No 1684, 1st floor, 2nd cross, Anikethana Rd,<br>P and T Block, Jayanagar, Kuvempu Nagara,<br>Mysuru, Karnataka 570023</address>
+      <p class="mt-3 font-semibold">⬆️ We're on the 1st floor.</p>
+      <p class="mt-3"><strong>Open every day</strong> · 11:00 AM – 10:00 PM</p>
+      <div class="mt-6 grid grid-cols-3 gap-2">
+        <a href="tel:+919945016363" class="flex flex-col items-center justify-center min-h-[64px] rounded-xl bg-white border border-[#F1DFCF] font-semibold text-sm"><span aria-hidden="true" class="text-xl">📞</span>Call</a>
+        <a data-wa="Hi Cafe Nestaa! I found your website and have a question." href="#" target="_blank" rel="noopener" class="flex flex-col items-center justify-center min-h-[64px] rounded-xl bg-[#16733D] text-white font-semibold text-sm"><span aria-hidden="true" class="text-xl">💬</span>WhatsApp</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Nestaa+Kuvempunagar+Mysuru" target="_blank" rel="noopener" class="flex flex-col items-center justify-center min-h-[64px] rounded-xl bg-white border border-[#F1DFCF] font-semibold text-sm"><span aria-hidden="true" class="text-xl">📍</span>Directions</a>
+      </div>
+    </div>
+    <iframe title="Map showing Cafe Nestaa, Kuvempunagar" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-72 md:h-96 rounded-2xl border-0 shadow" src="https://maps.google.com/maps?q=Cafe%20Nestaa%20Kuvempunagar%20Mysuru&z=16&output=embed"></iframe>
+  </div>
+</section>
+</main>
+
+<!-- 7. Footer -->
+<footer class="bg-coffee text-cream/80 text-sm py-8 px-5 text-center">
+  <p>© 2026 Cafe Nestaa</p>
+  <p class="mt-1">Website concept by Vivan — <a href="https://v1therun.com" class="underline text-cream">v1therun.com</a></p>
+</footer>
+
+<!-- Sticky mobile bar -->
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-40 bg-coffee/95 backdrop-blur border-t border-white/10 grid grid-cols-3 text-cream text-sm font-semibold" style="padding-bottom: env(safe-area-inset-bottom)" aria-label="Quick contact">
+  <a href="tel:+919945016363" class="flex items-center justify-center gap-1.5 min-h-[60px]"><span aria-hidden="true">📞</span> Call</a>
+  <a data-wa="Hi Cafe Nestaa! I found your website and have a question." href="#" target="_blank" rel="noopener" class="flex items-center justify-center gap-1.5 min-h-[60px] bg-[#16733D] text-white"><span aria-hidden="true">💬</span> WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Cafe+Nestaa+Kuvempunagar+Mysuru" target="_blank" rel="noopener" class="flex items-center justify-center gap-1.5 min-h-[60px]"><span aria-hidden="true">📍</span> Directions</a>
+</nav>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[60] bg-black/90 hidden items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button type="button" id="lbClose" class="absolute top-10 right-4 w-12 h-12 rounded-full bg-white/15 text-white text-2xl" aria-label="Close">×</button>
+  <img id="lbImg" src="" alt="" class="max-h-[80vh] max-w-full rounded-xl">
+</div>
+
+<style>
+  .veg, .nonveg { display:inline-block; width: 14px; height: 14px; border: 1.5px solid; border-radius: 2px; position: relative; flex-shrink: 0; }
+  .veg { border-color: #1B7A3D; } .nonveg { border-color: #B3261E; }
+  .veg::after, .nonveg::after { content:''; position:absolute; inset: 2.5px; border-radius: 50%; }
+  .veg::after { background:#1B7A3D; } .nonveg::after { background:#B3261E; }
+</style>
+
+<script>
+  const WA = 'https://wa.me/919945016363?text=';
+  const waLink = (msg) => WA + encodeURIComponent(msg);
+  document.querySelectorAll('[data-wa]').forEach(a => a.href = waLink(a.dataset.wa));
+
+  // ---- Menu (sample) ----
+  const MENU = {
+    'Starters': [['Loaded Nachos', 'Cheese sauce, salsa, jalapeños', 1], ['Peri-Peri Loaded Fries', 'Cheesy, spicy, shareable', 1], ['Paneer Chilli', 'Indo-Chinese, dry or gravy', 1], ['Crispy Corn', 'Salt & pepper tossed', 1], ['Chicken Popcorn', 'With garlic mayo', 0]],
+    'Pasta': [['White Sauce Pasta', 'Creamy, cheesy, crowd favourite', 1], ['Red Sauce Penne', 'Tangy tomato & herbs', 1], ['Pink Sauce Pasta', 'Best of both', 1], ['Pesto Pasta', 'Basil, garlic, parmesan', 1], ['Chicken Alfredo', 'Creamy with grilled chicken', 0]],
+    'Mains': [['Paneer Tikka Sandwich', 'Grilled, with fries', 1], ['Classic Veg Burger', 'Crispy patty, house sauce', 1], ['Paneer Wrap', 'Tandoori paneer, mint mayo', 1], ['Margherita Pizza', 'Thin crust, mozzarella', 1], ['Chicken Burger', 'Crispy fried chicken', 0]],
+    'Shakes & Coffee': [['Oreo Shake', 'Thick and indulgent', 1], ['KitKat Shake', 'Chocolate overload', 1], ['Cold Coffee', 'With a scoop of ice cream', 1], ['Hazelnut Frappe', 'Blended & chilled', 1], ['Cappuccino', 'Hot, classic', 1]],
+    'Desserts': [['Brownie with Ice Cream', 'Warm, fudgy', 1], ['Sizzling Brownie', 'Served on a hot plate', 1], ['Belgian Waffle', 'Chocolate or Nutella', 1], ['Choco Lava Cake', 'Gooey centre', 1]],
+  };
+  const tabs = document.getElementById('menuTabs'), list = document.getElementById('menuList');
+  function showMenu(cat) {
+    tabs.querySelectorAll('button').forEach(b => {
+      const on = b.dataset.cat === cat;
+      b.setAttribute('aria-selected', on);
+      b.className = 'shrink-0 min-h-[44px] px-4 rounded-full text-sm font-semibold border-2 transition ' + (on ? 'bg-coffee text-cream border-coffee' : 'bg-white border-[#E5D6C6]');
+    });
+    list.innerHTML = MENU[cat].map(([n, d, v]) =>
+      `<li class="flex items-start gap-3 py-3.5"><span class="${v ? 'veg' : 'nonveg'} mt-1.5" role="img" aria-label="${v ? 'Veg' : 'Non-veg'}"></span><div class="flex-1"><p class="font-semibold">${n}</p><p class="text-sm text-mocha">${d}</p></div><span class="text-mocha font-semibold" aria-label="price to be added">₹—</span></li>`).join('');
+  }
+  Object.keys(MENU).forEach((cat, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.role = 'tab'; b.textContent = cat; b.dataset.cat = cat;
+    b.onclick = () => showMenu(cat);
+    tabs.appendChild(b);
+  });
+  showMenu('Starters');
+
+  // ---- Lightbox ----
+  const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lbImg');
+  document.querySelectorAll('#gallery button').forEach(btn => btn.onclick = () => {
+    const img = btn.querySelector('img');
+    lbImg.src = img.src.replace('w=600&h=600&fit=crop', 'w=1200'); lbImg.alt = img.alt;
+    lb.classList.replace('hidden', 'flex'); document.getElementById('lbClose').focus();
+  });
+  const closeLb = () => lb.classList.replace('flex', 'hidden');
+  lb.onclick = (e) => { if (e.target !== lbImg) closeLb(); };
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+
+  // ---- Booking form ----
+  const f = document.getElementById('bookingForm');
+  const pad = n => String(n).padStart(2, '0');
+  const today = new Date(); const todayStr = `${today.getFullYear()}-${pad(today.getMonth() + 1)}-${pad(today.getDate())}`;
+  f.date.min = todayStr;
+
+  document.querySelectorAll('.pick').forEach(b => b.onclick = () => {
+    f.querySelector(`input[name=package][value="${b.dataset.pick}"]`).checked = true;
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => f.name.focus({ preventScroll: true }), 500);
+  });
+  const g = f.guests;
+  document.getElementById('gMinus').onclick = () => g.value = Math.max(1, (+g.value || 1) - 1);
+  document.getElementById('gPlus').onclick = () => g.value = Math.min(40, (+g.value || 0) + 1);
+
+  function setErr(field, msg) {
+    field.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    document.getElementById(field.id + '-err').textContent = msg || '';
+    return !msg;
+  }
+  function validate() {
+    let ok = true, first = null;
+    const check = (field, msg) => { if (!setErr(field, msg)) { ok = false; first = first || field; } };
+    check(f.name, f.name.value.trim().length < 2 ? 'Please enter your name' : '');
+    check(f.occasion, !f.occasion.value ? 'Pick the occasion' : '');
+    check(f.date, !f.date.value ? 'Choose a date' : f.date.value < todayStr ? 'That date has passed' : '');
+    check(f.time, !f.time.value ? 'Choose a time' : (f.time.value < '11:00' || f.time.value > '21:30') ? 'We\'re open 11 AM – 10 PM' : '');
+    const n = +g.value;
+    check(g, !(n >= 1 && n <= 40) ? 'Between 1 and 40 guests' : '');
+    if (first) first.focus();
+    return ok;
+  }
+  ['name', 'occasion', 'date', 'time', 'guests'].forEach(k => f[k].addEventListener('change', () => f[k].getAttribute('aria-invalid') === 'true' && validate()));
+
+  function fmtDate(v) { const [y, m, d] = v.split('-').map(Number); return new Date(y, m - 1, d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); }
+  function fmtTime(v) { let [h, m] = v.split(':').map(Number); const ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12; return `${h}:${pad(m)} ${ap}`; }
+
+  f.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    const lines = [
+      "Hi Cafe Nestaa! I'd like to book a celebration.",
+      `Name: ${f.name.value.trim()}`,
+      `Occasion: ${f.occasion.value}`,
+      `Date: ${fmtDate(f.date.value)}, ${fmtTime(f.time.value)}`,
+      `Guests: ${g.value}`,
+      `Package: ${f.package.value}`,
+    ];
+    if (f.notes.value.trim()) lines.push(`Notes: ${f.notes.value.trim()}`);
+    const url = waLink(lines.join('\n'));
+    const btn = document.getElementById('submitBtn'), label = document.getElementById('submitLabel');
+    btn.disabled = true; label.textContent = 'Opening WhatsApp…';
+    setTimeout(() => {
+      if (!window.open(url, '_blank')) location.href = url;
+      btn.disabled = false; label.textContent = 'Send booking on WhatsApp';
+    }, 350);
+  });
+</script>
+</body>
+</html>
